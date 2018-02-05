@@ -31,12 +31,12 @@
   - 删除了之前**循环轮播-1**的一个判断:
   ```
    if (this.loop) {
-          nowIndex -= 1;
+          pageIndex -= 1;
         }
   ```      
   - 在 1.6.3 的版本中会多出 2 个 dots，需要减去(官方给出的组件 demo 中是没有这个问题的，可能是 1.6.3 版本的问题,具体可以参考官方文档写法)  
   ```
-   **this.dots = new Array(this.children.length - 2)**
+   this.dots = new Array(this.children.length - 2)
   ```
 
 2. 关于滚动
