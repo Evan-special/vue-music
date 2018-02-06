@@ -45,7 +45,7 @@
       //官方写法
       clearTimeout(this.timer); 
       this.timer = setTimeout(() => {
-        this.slider.next();
+        this.slide.next();
       }, this.interval);
     }
 
@@ -56,7 +56,7 @@
          pageIndex += 1;
       }
       this.timer = setTimeout(() => {
-        this.slider.goToPage(pageIndex, 0, 400);
+        this.slide.goToPage(pageIndex, 0, 400);
         }, this.interval);
     }
   ```
