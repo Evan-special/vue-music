@@ -22,23 +22,23 @@
 1. 关于轮播
   - 新版本中 **snap** 以对象的形式书写:
   ```    
-   snap: {
-          loop: true,
-          threshold: 0.3, 
-          speed: 400
-        }  
+  snap: {
+      loop: true,
+      threshold: 0.3, 
+      speed: 400
+  }  
   ```
-  - 删除了之前**循环轮播 -1**的一个判断:
+  - 删除了之前 **循环轮播 -1** 的一个判断:
   ```
-   if (this.loop) {
-          pageIndex -= 1;
-        }
+  if (this.loop) {
+      pageIndex -= 1;
+  }
   ```      
   - 在 1.6.3 的版本中会多出 2 个 dots，需要减去(官方给出的组件 demo 中是没有这个问题的，可能是 1.6.3 版本的问题，具体可以参考官方文档写法)  
   ```
    this.dots = new Array(this.children.length - 2)
   ```
-  - 新版本提供了 this.slider.prev() 和 this.slider.next() 来实现图片的上下切换,自动轮播时调用this.slider.next()方法即可。
+  - 新版本提供了 `this.slide.prev()` 和 `this.slide.next()` 来实现图片的上下切换,自动轮播时调用 `this.slide.next()` 方法即可。
   ```
     新版本:
     _play() {
@@ -56,7 +56,7 @@
          pageIndex += 1;
       }
       this.timer = setTimeout(() => {
-        this.slider.goToPage(pageIndex, 0, 400)
+        this.slider.goToPage(pageIndex, 0, 400);
         }, this.interval);
     }
   ```
