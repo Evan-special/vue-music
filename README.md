@@ -28,7 +28,7 @@
           speed: 400
         }  
   ```
-  - 删除了之前**循环轮播-1**的一个判断:
+  - 删除了之前**循环轮播 -1**的一个判断:
   ```
    if (this.loop) {
           pageIndex -= 1;
@@ -38,7 +38,28 @@
   ```
    this.dots = new Array(this.children.length - 2)
   ```
+  - 新版本提供了 this.slider.prev() 和 this.slider.next() 来实现图片的上下切换,自动轮播时调用this.slider.next()方法即可。
+  ```
+    新版本:
+    _play() {
+      //官方写法
+      clearTimeout(this.timer); 
+      this.timer = setTimeout(() => {
+        this.slider.next();
+      }, this.interval);
+    }
 
+    老版本:
+    _play() {
+      let pageIndex = this.currentPageIndex + 1;
+      if (this.loop) {
+         pageIndex += 1;
+      }
+      this.timer = setTimeout(() => {
+        this.slider.goToPage(pageIndex, 0, 400)
+        }, this.interval);
+    }
+  ```
 2. 关于滚动
    不知道是不是因为版本更新,初始化时无法滚动，需要刷新一次才可以滚动操作。(可能是滚动的组件写法也更新了，因为我没有看过官方的滚动组件，所有不知道是哪里的问题，想知道的可以去看看官方的写法，看看是哪里的问题)
 
