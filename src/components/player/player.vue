@@ -377,7 +377,6 @@ export default {
       this.$nextTick(() => {
         // 在 DOM 更新之后在调用
         this.$refs.audio.play();
-        // this.currentSong._getLyric();
         this.getLyricParser();
       });
     },

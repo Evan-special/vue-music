@@ -44,7 +44,6 @@ export default {
       this.touch.left = this.$refs.progress.clientWidth;
     },
     touchMove(e) {
-      console.log('2222')
       // 判断有没有进入 touchstart
       if (!this.touch.isStart) {
         return;
